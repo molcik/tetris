@@ -6,15 +6,15 @@
   width: 4px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #C2FFAE;
+  background-color: #4fe2c2;
 }
 body {
   margin: 0;
 }
 body, a, input, button {
-  background-color:#000000;
+  background-color:#191a23;
   border:none;
-  color:#C2FFAE;
+  color:#4fe2c2;
   font-family: 'DejaVuSansMono', monospace;
   font-size:12px;
   line-height: 1.2;
@@ -33,13 +33,16 @@ button, input {
   text-transform: uppercase;
 }
 input {
-  border-bottom: 1px solid #C2FFAE;
+  border-bottom: 1px solid #4fe2c2;
   width:80px;
 }
 #loading {
   display:none;
 }
 #container {
+  background-image: url("../public/star-dust.svg");
+  background-size: cover;
+  background-position: center;
   display:block;
   height:100%;
   width:100%;
@@ -59,8 +62,8 @@ input {
   }
 }
 #leaderboard, #userboard {
-  background-color: #000000;
-  border: 1px solid #C2FFAE;
+  background-color: #191a23;
+  border: 1px solid #4fe2c2;
   display: none;
   padding: 40px 30px 20px;
   z-index: 1;

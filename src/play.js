@@ -72,10 +72,10 @@
   {
     function hide()
     {
-      byId("userboard-send").removeEventListener("click", sendScore)
+      // byId("userboard-send").removeEventListener("click", sendScore)
       byId("userboard-close").removeEventListener( "click", cancel )
       byId("userboard").style.display = "none";
-      unsubEnter()
+      // unsubEnter()
       unsubEsc()
     }
 
@@ -93,12 +93,13 @@
         return
 
       // console.log("SEND SCORE")
-      byId("userboard-send").removeEventListener("click", sendScore)
+      // byId("userboard-send").removeEventListener("click", sendScore)
       unsubEnter()
 
       userData.name = name
 
       var xhr = new XMLHttpRequest();
+      /*
       xhr.open("POST", "https://tetris-tiurin.rhcloud.com/api/scores", true);
       //Send the proper header information along with the request
       xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -112,7 +113,7 @@
           }
       }
       xhr.send( Object.keys( userData ).map( function( key ) { return key + "=" + userData[ key ] } ).join( "&" ) );
-
+*/
       var umountLoader = mountLoader( byId("userboard-send") )
 
       try {
@@ -143,11 +144,11 @@
     }
     catch( e ) {}
 
-    byId("name-input").focus()
-    byId("userboard-send").addEventListener( "click", sendScore )
+    // byId("name-input").focus()
+    // byId("userboard-send").addEventListener( "click", sendScore )
     byId("userboard-close").addEventListener( "click", cancel )
 
-    var unsubEnter = onEnter( byId("name-input"), sendScore )
+    // var unsubEnter = onEnter( byId("name-input"), sendScore )
     var unsubEsc = onEsc( document, cancel )
   }
 
@@ -174,6 +175,7 @@
 
     var unsubEsc = onEsc( document, hide )
 
+    /*
     var xhr = new XMLHttpRequest();
     xhr.open('GET', "https://tetris-tiurin.rhcloud.com/api/scores", true);
 
@@ -191,6 +193,7 @@
     };
 
     xhr.send();
+    */
   }
 
   function clickScreenButton( e )
@@ -207,7 +210,7 @@
   {
     var controlIID, prevKeyCode
 
-    function termKey()
+    function termKey(e)
     {
       clearInterval( controlIID )
       controlIID = 0
@@ -235,6 +238,7 @@
 
       var keySpeed = { 37: 100, 39: 100, 40: 50 }
       controlIID = setInterval( pressKey, keySpeed[ keyCode ] || 200 )
+      e.preventDefault()
     }
 
     TETRIS.upause()
@@ -290,11 +294,11 @@
     }
   })
 
-  byId("leaderboard-link").addEventListener( "click", function() {
+  /*byId("leaderboard-link").addEventListener( "click", function() {
     ubindGameKeys()
 
     popLeaderboard( function() {
       ubindGameKeys = bindGameKeys()
     })
-  })
+  })*/
 }()

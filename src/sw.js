@@ -24,7 +24,8 @@ self.addEventListener('install', function(event) {
         './public/key3.ogg',
         './public/key4.ogg',
         './public/space.ogg',
-        './public/DejaVuSansMono.ttf'
+        './public/DejaVuSansMono.ttf',
+        './public/star-dust.svg'
       ]);
 
       // And add resources to it
